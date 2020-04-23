@@ -12,6 +12,7 @@ console.log(path.join(__dirname, '../public'))
 
 const app = express()
 
+const port = process.env.PORT || 3000
 app.set('view engine', 'hbs')
 
 //define paths for express config
@@ -103,6 +104,6 @@ app.get('*',(req,res) => {
         message:'Generic 404 message'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
